@@ -1,0 +1,12 @@
+<h1>Articles</h1>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review.title %>
+    </li>
+    <li>
+      <%= review.content %>
+    </li>
+  <% end %>
+</ul>

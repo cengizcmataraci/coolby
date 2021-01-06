@@ -20,43 +20,9 @@
     <p class="alert"><%= alert %></p>
   </div>
 <% end %>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:40px;">
-  <div class="container-fluid">
-    <%= link_to fa_icon('meteor'), root_path, class: 'navbar-brand' %>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <% if user_signed_in? %>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Movie</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Series</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Book</a>
-        </li>
-          <% end %>
-      </ul>
-      <form class="container-fluid justify-content-end">
-        <%= link_to "Login", new_user_session_path, class: 'btn btn-sm btn-outline-secondary button' %>
-      </form>
-    </div>
-  </div>
-</nav>
+
+<%= render "layouts/navbar" %>
 <%= yield %>
-<nav class="navbar fixed-bottom navbar-dark bg-dark">
-  <div class="container-fluid">
-  <div style="color: white; font-size: 10px;">
-    <span style="opacity: 20%;"><%= fa_icon('shoe-prints') %></span>
-    <span style="opacity: 40%;"><%= fa_icon('shoe-prints') %></span>
-    <span style="opacity: 75%;"><%= fa_icon('shoe-prints') %></span>
-    <span class="ml-2"><a href="https://www.carbonfootprint.com/" target="_blank" style="color: white;">Help us to decrease carbon footprint!</a></span>
-  </div>
-  <div class="justify-content-end" style="color: white; font-size: 10px;"><%= fa_icon('leaf') %></div>
-  </div>
-</nav>
+<%= render "layouts/footer" %>
 </body>
 </html>
