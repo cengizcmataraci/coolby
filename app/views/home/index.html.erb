@@ -2,6 +2,8 @@
   <h1>Welcome to the <strong><span style="color: crimson;">Coolby</span></strong>, your art fieldground!</h1>
   <p class="deneme">In this site you can review bunch of movies, series and books. And you can make lists, write
     reviews and much more stuff!</p>
-  <h5>Join us!</h5>
-  <button class="btn btn-primary button"><%= link_to "Sign Up", new_user_registration_path, class: 'button' %></button>
+  <% if !user_signed_in? %>
+    <h5>Join us!</h5>
+    <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %>
+  <% end %>
 </div>
