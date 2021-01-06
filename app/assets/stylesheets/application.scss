@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+//@import "font-awesome";
+@import 'font_awesome5_webfont';
+
+.navbar-brand:hover{
+  color: red;
+
+}
+
+.deneme:hover{
+  color: blue;
+}

@@ -29,11 +29,13 @@ gem 'simple_form'
 
 gem 'bootstrap', '~> 4.5.3'
 
-gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
+gem "font-awesome-rails"
 
+gem 'font_awesome5_rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
