@@ -1,9 +1,13 @@
 <div class="container text-center mt-5">
   <div class="row justify-content-md-center">
-    <div class="col-6">
-<h1><%= fa_icon('ring spin') %><%= @review.title %></h1>
+    <div class="col-7">
+      <h1><%= fa_icon('ring spin') %><%= @review.title %></h1>
 
-<p><%= @review.content %></p>
+      <p><%= @review.content %></p>
+
+      <ul>
+        <li><%= link_to "Edit", edit_review_path(@review) %></li>
+      </ul>
     </div>
   </div>
 </div>

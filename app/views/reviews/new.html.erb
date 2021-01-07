@@ -3,25 +3,25 @@
     <div class="col-6">
       <h1>New Review</h1>
 
-      <%= simple_form_for @review do |f| %>
+      <%= simple_form_for @review, url: @review do |f| %>
         <div>
           <%= f.label :title %><br>
           <%= f.text_field :title, class: 'form-control' %>
-          <%= @review.errors.full_messages_for(:title).each do |message| %>
-            <div><%= message %></div>
+          <% @review.errors.full_messages_for(:title).each do |message| %>
+            <div style="color: red;"><%= message %></div>
           <% end %>
         </div>
 
         <div>
-          <%= f.label :content %><br>
+          <%= f.label :content, class: 'mt-4' %><br>
           <%= f.text_area :content, class: 'form-control' %>
-          <%= @review.errors.full_messages_for(:content).each do |message| %>
-            <div><%= message %></div>
+          <% @review.errors.full_messages_for(:content).each do |message| %>
+            <div style="color: red;"><%= message %></div>
           <% end %>
         </div>
 
         <div>
-          <%= f.button :submit, class: 'btn btn-primary' %>
+          <%= f.button :submit, class: 'btn btn-primary mt-4' %>
         </div>
       <% end %>
     </div>

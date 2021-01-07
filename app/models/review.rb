@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true, length: { minimum: 10 }
-  belongs_to :user
+  belongs_to :user, optional: true
 end
