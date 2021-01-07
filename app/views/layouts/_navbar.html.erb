@@ -1,8 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height:40px;">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark container-fluid" style="height:40px;">
     <%= link_to fa_icon('meteor'), root_path, class: 'navbar-brand' %>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mr-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -18,14 +17,13 @@
           </li>
         <% end %>
       </ul>
-      <form class="container-fluid justify-content-end">
+      <form class="justify-content-end">
         <% if user_signed_in? %>
           <%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-sm btn-warning mr-2' %>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-danger' %>
         <% else %>
-          <%= link_to "Login", new_user_session_path, class: 'btn btn-sm btn-outline-secondary button' %>
+          <%= link_to "Login", new_user_session_path, class: 'btn btn-sm btn-info button' %>
         <% end %>
       </form>
     </div>
-  </div>
 </nav>
