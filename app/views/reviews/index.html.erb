@@ -1,12 +1,15 @@
-<h1>Articles</h1>
+<div class="container">
+  <div class="row justify-content-md-center mt-5">
+    <div class="col-6">
+      <h1>Reviews</h1>
 
-<ul>
-  <% @reviews.each do |review| %>
-    <li>
-      <%= review.title %>
-    </li>
-    <li>
-      <%= review.content %>
-    </li>
-  <% end %>
-</ul>
+      <ul>
+        <% @reviews.each do |review| %>
+          <li>
+            <%= link_to review.title, review_path(review) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

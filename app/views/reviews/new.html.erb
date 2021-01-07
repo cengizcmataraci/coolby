@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-md-center mt-5">
+    <div class="col-6">
+      <h1>New Review</h1>
+
+      <%= simple_form_for @review do |f| %>
+        <div>
+          <%= f.label :title %><br>
+          <%= f.text_field :title, class: 'form-control' %>
+          <%= @review.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+
+        <div>
+          <%= f.label :content %><br>
+          <%= f.text_area :content, class: 'form-control' %>
+          <%= @review.errors.full_messages_for(:content).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
+
+        <div>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
