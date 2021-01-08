@@ -5,19 +5,11 @@
 
       <%= simple_form_for @review, url: @review do |f| %>
         <div>
-          <%= f.label :title %><br>
-          <%= f.text_field :title, class: 'form-control' %>
-          <% @review.errors.full_messages_for(:title).each do |message| %>
-            <div style="color: red;"><%= message %></div>
-          <% end %>
+          <%= f.input :title, class: 'form-control mb-4' %>
         </div>
 
         <div>
-          <%= f.label :content, class: 'mt-4' %><br>
-          <%= f.text_area :content, class: 'form-control' %>
-          <% @review.errors.full_messages_for(:content).each do |message| %>
-            <div style="color: red;"><%= message %></div>
-          <% end %>
+          <%= f.input :content, :as => :text, :input_html => {:rows => 7}, class: "form-control" %>
         </div>
 
         <div>
