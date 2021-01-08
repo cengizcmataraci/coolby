@@ -5,6 +5,8 @@
 
       <p><%= @review.content %></p>
 
+      <p><%= @review.user.methods %></p>
+
       <ul>
         <li><%= link_to "Edit", edit_review_path(@review) %></li>
       </ul>
