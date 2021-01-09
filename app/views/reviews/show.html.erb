@@ -4,9 +4,6 @@
       <h1><%= fa_icon('ring spin') %><%= @review.title %></h1>
 
       <p><%= @review.content %></p>
-
-      <p><%= @review.user.methods %></p>
-
       <ul>
         <li><%= link_to "Edit", edit_review_path(@review) %></li>
       </ul>

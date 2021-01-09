@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-md-center mt-5">
-    <div class="col-6">
+    <div class="col-10">
       <h1>User#index</h1>
       <p>Find me in app/views/user/index.html.erb</p>
       <table class="border">
@@ -19,11 +19,22 @@
             <td align="center"><%= a.title %></td>
             <td align="center"><%= a.content %></td>
             <td align="center"><%= a.user.id %></td>
-            <td align="center"><%= a.user.try(:email) %></td>
+            <td align="center"><%= a.user.email %></td>
+            <td align="center"><%= current_user.id %></td>
           </tr>
         <% end %>
         </tbody>
       </table>
+
+      <h1>Users</h1>
+
+      <ul>
+        <% @users.each do |user| %>
+          <li>
+            <%= link_to user.email, user_path(user.id) %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

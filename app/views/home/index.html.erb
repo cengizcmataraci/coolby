@@ -4,7 +4,13 @@
       <p>denemedeneme</p>
     </div>
     <div class="col-8">
-      <h1>Welcome to the <strong><span style="color: crimson;">Coolby</span></strong>, your art fieldground!</h1>
+      <h1>Welcome to the <strong><span style="color: crimson;">Coolby</span></strong>
+        <% if user_signed_in? %>
+          <%= @username %>,
+          <% else %>
+          Stranger!
+          <% end %>
+        your art fieldground!</h1>
       <p class="deneme">In this site you can review bunch of movies, series and books. And you can make lists, write
         reviews and much more stuff!</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid aut, debitis error explicabo fugit nihil numquam obcaecati odio officiis pariatur placeat porro sint soluta tempora temporibus voluptatibus? Aspernatur, consequuntur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aspernatur earum esse exercitationem illum ipsum nam odio quod repellat repudiandae? Consectetur, dolorem error minima quasi quos rerum voluptas voluptate? Dolores. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto enim laborum maiores necessitatibus nemo neque odio odit officia pariatur perspiciatis praesentium quia rerum, sequi sunt tempora tenetur unde ut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ea eligendi hic illo iste obcaecati odit quasi qui quibusdam similique suscipit ullam, veniam! Aspernatur consequuntur eaque enim fugit ipsum. Tempore? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam aliquid aperiam cumque molestias, nisi quibusdam quod quos ratione repudiandae unde ut vero voluptas. Aspernatur doloribus excepturi non odit placeat? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque deleniti earum enim esse, inventore nam nesciunt non, nulla numquam possimus, provident quis veniam. Dicta esse ipsum omnis optio similique! </p>
@@ -14,7 +20,7 @@
       <% end %>
     </div>
     <div class="col border ">
-      <p>denemedeneme</p>
+      <p><%= @username %></p>
     </div>
   </div>
 </div>
