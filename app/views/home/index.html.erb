@@ -5,10 +5,8 @@
     </div>
     <div class="col-8">
       <h1>Welcome to the <strong><span style="color: crimson;">Coolby</span></strong>
-        <% if user_signed_in? %>
-          <%= @username %>,
-          <% else %>
-          Stranger!
+        <% if current_user %>
+          <%= current_user.username %>,
           <% end %>
         your art fieldground!</h1>
       <p class="deneme">In this site you can review bunch of movies, series and books. And you can make lists, write
@@ -20,7 +18,9 @@
       <% end %>
     </div>
     <div class="col border ">
-      <p><%= @username %></p>
+      <% if current_user %>
+      <p><%= current_user.username %></p>
+        <% end %>
     </div>
   </div>
 </div>
