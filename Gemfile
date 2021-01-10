@@ -39,8 +39,9 @@ gem 'font_awesome5_rails'
 
 gem 'toastr-rails'
 
-gem 'trix-rails', require: 'trix'
+# gem 'trix-rails', require: 'trix'
 
+gem 'trix'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

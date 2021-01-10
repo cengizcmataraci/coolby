@@ -5,17 +5,15 @@
 
 //= require jquery
 //= require bootstrap
-import "bootstrap"
+//= require trix
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require ("font_awesome5")
-
 global.toastr = require("toastr")
 import "../stylesheets/application"
 require("popper")
-require("trix")
 require("@rails/actiontext")
 
 

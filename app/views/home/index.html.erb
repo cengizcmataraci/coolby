@@ -1,6 +1,6 @@
-<div class="container mt-5">
+<div class="container-fluid mt-5">
   <div class="row justify-content-md-center text-center mb-5">
-    <div class="col border">
+    <div class="col border ml-4">
       <p>denemedeneme</p>
     </div>
     <div class="col-8">
@@ -17,7 +17,7 @@
         <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %>
       <% end %>
     </div>
-    <div class="col border ">
+    <div class="col border mr-4">
       <% if current_user %>
       <p><%= current_user.username %></p>
         <% end %>

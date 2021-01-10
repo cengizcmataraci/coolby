@@ -1,4 +1,5 @@
 /*
+ *= require trix
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -11,20 +12,19 @@
  * It is generally better to create a new file per style scope.
  *
  *= require bootstrap
- *= require_tree .
  *= require_self
- *= require trix
+ *= require_tree .
  */
 @import 'font_awesome5_webfont';
 @import 'toastr';
 @import "./actiontext.scss";
 
-.navbar-brand:hover{
+.navbar-brand:hover {
   color: red;
 
 }
 
-.deneme:hover{
+.deneme:hover {
   color: blue;
 }
 
@@ -37,6 +37,3 @@
   text-decoration: none;
 }
 
-#notice {
-  color: green;
-}
