@@ -43,7 +43,15 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
 
-    redirect_to reviews_index_path
+    respond_to do |format|
+      if @review.destroy
+        format.html { redirect_to user_path(current_user.id), alert: 'Sadly, its gone.' }
+        format.json { render :show, status: :created, location: @review }
+      else
+        format.html { render :new }
+        format.json { render json: @review.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private

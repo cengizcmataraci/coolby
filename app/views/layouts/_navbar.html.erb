@@ -27,10 +27,17 @@
       <% if user_signed_in? %>
         <%= link_to 'New Review', new_review_path, class: 'btn btn-sm btn-success' %>
         <span class="text-light mr-2 ml-2">|</span>
-        <span class="text-light mr-2"><%= current_user.username %></span>
-        <%= link_to 'My Profile', user_path(current_user.id), class: 'btn btn-sm btn-primary mr-2' %>
-        <%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-sm btn-warning mr-2' %>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-danger' %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <%= current_user.username %>
+          </button>
+          <div class="dropdown-menu dropdown-menu-lg-right mt-1 ml-3">
+            <%= link_to 'My Profile', user_path(current_user.id), class: 'dropdown-item' %>
+            <%= link_to 'Edit profile', edit_user_registration_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-sm btn-danger dropdown-item' %>
+          </div>
+        </div>
       <% else %>
         <%= link_to "Login", new_user_session_path, class: 'btn btn-sm btn-info button' %>
       <% end %>
