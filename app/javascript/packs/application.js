@@ -11,11 +11,14 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require ("font_awesome5")
-require ("toastr")
-require ("jquery")
+
+global.toastr = require("toastr")
+import "../stylesheets/application"
 require("popper")
 require("trix")
 require("@rails/actiontext")
+
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -16,7 +16,7 @@
  *= require trix
  */
 @import 'font_awesome5_webfont';
-@import "toastr";
+@import 'toastr';
 @import "./actiontext.scss";
 
 .navbar-brand:hover{
@@ -35,4 +35,8 @@
 .button:hover {
   color: white;
   text-decoration: none;
+}
+
+#notice {
+  color: green;
 }

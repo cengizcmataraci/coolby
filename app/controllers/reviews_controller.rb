@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @reviews = Review.all
   end
@@ -12,11 +13,15 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
-    if @review.save
-      redirect_to action: 'index'
-    else
-      render :new, notice: 'Error.'
+    @review = current_user.reviews.build(review_params)
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to reviews_index_path, notice: 'Your great review was successfully created.' }
+        format.json { render :show, status: :created, location: @review }
+      else
+        format.html { render :new }
+        format.json { render json: @review.errors, status: :unprocessable_entity }
+      end
     end
   end
 
