@@ -4,9 +4,18 @@
       <h1><%= fa_icon('ring spin') %><%= @review.title %></h1>
 
       <p><%= @review.content %></p>
-      <ul>
-        <li><%= link_to "Edit", edit_review_path(@review) %></li>
-      </ul>
+      <%= link_to "Edit", edit_review_path(@review), class: 'btn btn-sm btn-warning mr-4' %>
+      <%= link_to "Delete", review_path(@review), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Really? Are you want to delete this precious review?'} %>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

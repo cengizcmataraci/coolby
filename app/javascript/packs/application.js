@@ -3,6 +3,9 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
+//= require jquery
+//= require bootstrap
+import "bootstrap"
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -10,6 +13,9 @@ require("channels")
 require ("font_awesome5")
 require ("toastr")
 require ("jquery")
+require("popper")
+require("trix")
+require("@rails/actiontext")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
