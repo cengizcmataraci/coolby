@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'reviews/new'
   devise_for :users
   root 'home#index'
-  resources :reviews
+  resources :reviews do
+    resources :comments
+  end
   resources :user
 end

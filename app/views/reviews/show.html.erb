@@ -5,6 +5,33 @@
 
       <p><%= @review.content %></p>
 
+      <h2>Comments</h2>
+      <% @review.comments.each do |comment| %>
+        <p>
+          <strong>Name:</strong>
+          <%= comment.name %>
+        </p>
+
+        <p>
+          <strong>Comment:</strong>
+          <%= comment.body %>
+        </p>
+      <% end %>
+
+      <h2>Add a comment:</h2>
+      <%= form_with model: [ @review, @review.comments.build ] do |form| %>
+        <p>
+          <%= form.label :name %><br>
+          <%= form.text_field :name %>
+        </p>
+        <p>
+          <%= form.label :body %><br>
+          <%= form.text_area :body %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>
