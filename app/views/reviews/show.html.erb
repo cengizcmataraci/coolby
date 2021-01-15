@@ -6,9 +6,9 @@
       <p><%= @review.content %></p>
 
       <h3>Comments</h3>
-      <% @review.comments.each do |comment| %>
+      <div class="container border mb-4">
       <%= render @review.comments %>
-      <% end %>
+      </div>
       <%= render 'comments/form' %>
     </div>
   </div>
